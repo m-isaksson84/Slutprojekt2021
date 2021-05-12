@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Programmering\\Slutprojekt2021\\Slutprojekt\\Slutprojekt.csproj": {}
+  },
+  "projects": {
+    "D:\\Programmering\\Slutprojekt2021\\Slutprojekt\\Slutprojekt.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Programmering\\Slutprojekt2021\\Slutprojekt\\Slutprojekt.csproj",
+        "projectName": "Slutprojekt",
+        "projectPath": "D:\\Programmering\\Slutprojekt2021\\Slutprojekt\\Slutprojekt.csproj",
+        "packagesPath": "C:\\Users\\Marcus PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Programmering\\Slutprojekt2021\\Slutprojekt\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Marcus PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

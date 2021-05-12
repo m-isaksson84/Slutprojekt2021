@@ -1,0 +1,13 @@
+D:\Programmering\Slutprojekt2021\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.exe
+D:\Programmering\Slutprojekt2021\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.deps.json
+D:\Programmering\Slutprojekt2021\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.runtimeconfig.json
+D:\Programmering\Slutprojekt2021\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.runtimeconfig.dev.json
+D:\Programmering\Slutprojekt2021\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.dll
+D:\Programmering\Slutprojekt2021\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.pdb
+D:\Programmering\Slutprojekt2021\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.csprojAssemblyReference.cache
+D:\Programmering\Slutprojekt2021\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.AssemblyInfoInputs.cache
+D:\Programmering\Slutprojekt2021\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.AssemblyInfo.cs
+D:\Programmering\Slutprojekt2021\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.csproj.CoreCompileInputs.cache
+D:\Programmering\Slutprojekt2021\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.dll
+D:\Programmering\Slutprojekt2021\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.pdb
+D:\Programmering\Slutprojekt2021\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.genruntimeconfig.cache
