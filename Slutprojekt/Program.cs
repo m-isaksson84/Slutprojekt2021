@@ -7,16 +7,26 @@ namespace Slutprojekt
         static void Main(string[] args)
         {
             
+            // definierar vissa viktiga variabler som används i hela koden.
             Random generator = new Random();
+
+            // dessa bools används för att visa/dölja de olika menyerna.
             bool inMenu = true;
             bool inGameStartup = false;
             bool gameStarted = false;
+
+            // ingen class är vald innan något i spelet har skett.
             string classChosen = "";
             string botClassChosen = "";
+
+            // denna generator genererar en klass mellan 1-3 för botten slumpmässigt i början av spelet utanför while looparna. 
+            //Detta är viktigt då man annars kan "refresha" bottens val av klass och rigga spelet.
             int botClass = generator.Next(1, 4);
+            
             int playerHealth = 0;
             int botHealth = 0;
 
+            // använder while för att loopa skärmen ifall användaren ger "fel" input.
             while (inMenu) {
 
                 Console.WriteLine("Choose your class:");
@@ -28,6 +38,7 @@ namespace Slutprojekt
                 
                 string classSelect = Console.ReadLine();
 
+                // Här väljs vilken klass spelaren vill spela som, värdet som skrivs in testas i form av en string och beroende på input kommer olika prompts upp.
                 if (classSelect == "1") {
 
                     bool inMeleeInfo = true;
@@ -55,6 +66,7 @@ namespace Slutprojekt
 
                         string select = Console.ReadLine();
 
+                        // tillbaka till menyn
                         if (select == "2") {
                             Console.Clear();
                             Console.Beep(294,10);
@@ -62,6 +74,7 @@ namespace Slutprojekt
                             inMenu = true;
                         }
 
+                        // framåt
                         if (select == "1") {
                             Console.Clear();
                             Console.Beep(294,10);
@@ -73,7 +86,8 @@ namespace Slutprojekt
                         }
                     }
                 }
-
+                
+                // Här väljs vilken klass spelaren vill spela som, värdet som skrivs in testas i form av en string och beroende på input kommer olika prompts upp.
                 if (classSelect == "2") {
 
                     bool inArcherInfo = true;
@@ -120,6 +134,7 @@ namespace Slutprojekt
                     }
                 }
 
+                // Här väljs vilken klass spelaren vill spela som, värdet som skrivs in testas i form av en string och beroende på input kommer olika prompts upp.
                 if (classSelect == "3") {
 
                     bool inMageInfo = true;
@@ -174,6 +189,7 @@ namespace Slutprojekt
 
                     if (botClass.ToString() == "1") {
                         botClassChosen = "1";
+                        // används för att ge text-baserad indikation till spelaren gällande klassen som botten "valde".
                         botClassInfo = "Melee";
                         botHealth = 150;
                         Console.WriteLine("Your opponent chose " + botClassInfo);
@@ -193,6 +209,7 @@ namespace Slutprojekt
 
                     if (botClass.ToString() == "2") {
                         botClassChosen = "2";
+                        // används för att ge text-baserad indikation till spelaren gällande klassen som botten "valde".
                         botClassInfo = "Archer";
                         botHealth = 100;
                         Console.WriteLine("Your opponent chose " + botClassInfo);
@@ -211,6 +228,7 @@ namespace Slutprojekt
 
                     if (botClass.ToString() == "3") {
                         botClassChosen = "3";
+                        // används för att ge text-baserad indikation till spelaren gällande klassen som botten "valde".
                         botClassInfo = "Magic";
                         botHealth = 100;
                         Console.WriteLine("Your opponent chose " + botClassInfo);
@@ -305,66 +323,76 @@ namespace Slutprojekt
                 }
 
                 while (gameStarted) {
-
+                    
+                    // metod som genererar spelarens damage output, baseras på klassen som spelaren valt.
                     static int GetPlayerDamage(string classChosen)
                     {   
                 
                         Random damageGenerator = new Random();
-                        int botClass1 = damageGenerator.Next(5, 11);
-                        int botClass2 = damageGenerator.Next(1, 21);
-                        int botClass3 = damageGenerator.Next(5, 11);
-                        int botClass4 = damageGenerator.Next(0, 999999);
 
+                        // dessa olika generators ger en max resp. minimi mängd damage baserad på spelarens valda klass.
+                        int melee = damageGenerator.Next(5, 11);
+                        int archer = damageGenerator.Next(1, 21);
+                        int mage = damageGenerator.Next(5, 11);
+                        int other = damageGenerator.Next(0, 999999);
+
+                        // beroende på klassen som spelaren valt att spela som returneras respektive "range" av damage.
                         if (classChosen == "1") {
-                            return botClass1;
+                            return melee;
                         }
 
                         if (classChosen == "2") {
-                            return botClass2;
+                            return archer;
                         }
 
                         if (classChosen == "3") {
-                            return botClass3;
+                            return mage;
                         }
 
                         else {
-                            return botClass4;
+                            return other;
                         }
                     }
 
+                    // metod som genererar bottens damage output, baseras på klassen som botten valt.
                     static int GetBotDamage(string botClassChosen)
                     {   
 
                         Random damageGenerator = new Random();
-                        int damageClass1 = damageGenerator.Next(5, 11);
-                        int damageClass2 = damageGenerator.Next(1, 22);
-                        int damageClass3 = damageGenerator.Next(5, 16);
-                        int damageClass4 = damageGenerator.Next(0, 999999);
 
-                        // jämför inputLength med det bestämda intervallet.
+                        // dessa olika generators ger en max resp. minimi mängd damage baserad på bottens "valda" klass.
+                        int melee = damageGenerator.Next(5, 11);
+                        int archer = damageGenerator.Next(1, 22);
+                        int mage = damageGenerator.Next(5, 16);
+                        int other = damageGenerator.Next(0, 999999);
+
+                        // beroende på klassen som botten "valt" att spela som returneras respektive "range" av damage.
                         if (botClassChosen == "1") {
-                            return damageClass1;
+                            return melee;
                         }
 
                         if (botClassChosen == "2") {
-                            return damageClass2;
+                            return archer;
                         }
 
                         if (botClassChosen == "3") {
-                            return damageClass3;
+                            return mage;
                         }
 
                         else {
-                            return damageClass4;
+                            return other;
                         }
                     }
 
+                    // vi anropar metoderna för att de ska kunna användas
                     int damage = GetPlayerDamage(classChosen);
                     int botDamage = GetBotDamage(botClassChosen);
 
+                    // här beräknas mängden health som respektive spelare har.
                     botHealth = botHealth - damage;
                     playerHealth = playerHealth - botDamage;
 
+                    // om spelare/botten har mindre än 1 health (dvs 0 eller lägre) vinner den andra spelaren.
                     if (playerHealth < 1) {
                         Console.WriteLine("Your enemy strikes you down and wins!");
                         inMenu = true;
