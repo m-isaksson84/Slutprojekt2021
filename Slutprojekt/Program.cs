@@ -3,7 +3,67 @@
 namespace Slutprojekt
 {
     class Program
-    {
+    {   
+        // metod som genererar spelarens damage output, baseras på klassen som spelaren valt.
+        static int GetPlayerDamage(string classChosen)
+            {   
+                
+            Random damageGenerator = new Random();
+
+            // dessa olika generators ger en max resp. minimi mängd damage baserad på spelarens valda klass.
+            int melee = damageGenerator.Next(5, 11);
+            int archer = damageGenerator.Next(1, 21);
+            int mage = damageGenerator.Next(5, 11);
+            int other = damageGenerator.Next(0, 999999);
+
+            // beroende på klassen som spelaren valt att spela som returneras respektive "range" av damage.
+            if (classChosen == "1") {
+                return melee;
+            }
+
+            if (classChosen == "2") {
+                return archer;
+            }
+
+            if (classChosen == "3") {
+                return mage;
+            }
+
+            else {
+                return other;
+                }
+            }
+
+            // metod som genererar bottens damage output, baseras på klassen som botten valt.
+            static int GetBotDamage(string botClassChosen)
+                {   
+
+                    Random damageGenerator = new Random();
+
+                    // dessa olika generators ger en max resp. minimi mängd damage baserad på bottens "valda" klass.
+                    int melee = damageGenerator.Next(5, 11);
+                    int archer = damageGenerator.Next(1, 22);
+                    int mage = damageGenerator.Next(5, 16);
+                    int other = damageGenerator.Next(0, 999999);
+
+                    // beroende på klassen som botten "valt" att spela som returneras respektive "range" av damage.
+                    if (botClassChosen == "1") {
+                        return melee;
+                    }
+
+                    if (botClassChosen == "2") {
+                        return archer;
+                    }
+
+                    if (botClassChosen == "3") {
+                        return mage;
+                    }
+
+                    else {
+                        return other;
+                    }
+                }
+                
         static void Main(string[] args)
         {
             
@@ -324,66 +384,6 @@ namespace Slutprojekt
 
                 while (gameStarted) {
                     
-                    // metod som genererar spelarens damage output, baseras på klassen som spelaren valt.
-                    static int GetPlayerDamage(string classChosen)
-                    {   
-                
-                        Random damageGenerator = new Random();
-
-                        // dessa olika generators ger en max resp. minimi mängd damage baserad på spelarens valda klass.
-                        int melee = damageGenerator.Next(5, 11);
-                        int archer = damageGenerator.Next(1, 21);
-                        int mage = damageGenerator.Next(5, 11);
-                        int other = damageGenerator.Next(0, 999999);
-
-                        // beroende på klassen som spelaren valt att spela som returneras respektive "range" av damage.
-                        if (classChosen == "1") {
-                            return melee;
-                        }
-
-                        if (classChosen == "2") {
-                            return archer;
-                        }
-
-                        if (classChosen == "3") {
-                            return mage;
-                        }
-
-                        else {
-                            return other;
-                        }
-                    }
-
-                    // metod som genererar bottens damage output, baseras på klassen som botten valt.
-                    static int GetBotDamage(string botClassChosen)
-                    {   
-
-                        Random damageGenerator = new Random();
-
-                        // dessa olika generators ger en max resp. minimi mängd damage baserad på bottens "valda" klass.
-                        int melee = damageGenerator.Next(5, 11);
-                        int archer = damageGenerator.Next(1, 22);
-                        int mage = damageGenerator.Next(5, 16);
-                        int other = damageGenerator.Next(0, 999999);
-
-                        // beroende på klassen som botten "valt" att spela som returneras respektive "range" av damage.
-                        if (botClassChosen == "1") {
-                            return melee;
-                        }
-
-                        if (botClassChosen == "2") {
-                            return archer;
-                        }
-
-                        if (botClassChosen == "3") {
-                            return mage;
-                        }
-
-                        else {
-                            return other;
-                        }
-                    }
-
                     // vi anropar metoderna för att de ska kunna användas
                     int damage = GetPlayerDamage(classChosen);
                     int botDamage = GetBotDamage(botClassChosen);
